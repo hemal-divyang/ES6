@@ -1,0 +1,43 @@
+//SPREAD OPERATORS 
+
+// spread operator with array
+
+const team1 = ['user1','user2']
+const team2 = ['user3'];
+
+const newTeam = [...team1,...team2]
+console.log(newTeam)
+
+// copying array to new array
+const prodList1 = ['phone','mobile']
+const prodList2 = prodList1
+prodList2.push('camera')
+console.log(prodList1)//output ['phone','mobile'.'camera']
+console.log(prodList2)//output ['phone','mobile'.'camera']
+
+*to solve issue, spread operator can be used
+
+const prodList1 = ['phone','mobile']
+const prodList2 = [...prodList1]
+prodList2.push('camera')
+console.log(prodList1)//output ['phone','mobile']
+console.log(prodList2)//output ['phone','mobile'.'camera']
+
+// copying object to new object
+const emp = {
+name:'hemal',
+job:'developer'
+}
+const newEmp = {...emp}
+
+//can use to merge two object 
+const emp = {
+name:'hemal',
+job:'developer'
+}
+const person = {
+age:20
+}
+const newObj = {..emp, ...person}
+console.log(newObj)
+
