@@ -1,0 +1,13 @@
+//Destructuring is a feature in JavaScript that allows you to extract values from arrays or properties from objects and assign them to variables.
+//Example
+
+// ARRAY destructuring
+let numbers = [1, 2, 3];
+let [a, b, c] = numbers;
+
+console.log(a); // Output: 1
+console.log(b); // Output: 2
+console.log(c); // Output: 3
+
+console.log(x); // Output: 10
+console.log(y); // Output: 5
