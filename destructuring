@@ -9,5 +9,22 @@ console.log(a); // Output: 1
 console.log(b); // Output: 2
 console.log(c); // Output: 3
 
-console.log(x); // Output: 10
-console.log(y); // Output: 5
+// OBJECT destructuring
+let person = { name: 'Alice', age: 30, city: 'Wonderland' };
+
+let { name, age, city } = person;
+
+console.log(name); // Output: Alice
+console.log(age);  // Output: 30
+console.log(city); // Output: Wonderland
+
+// FUNCTION  parameter destructuring
+function printPersonDetails({ name, age, city }) {
+  console.log(`${name} is ${age} years old and lives in ${city}.`);
+}
+
+let person = { name: 'Alice', age: 28, city: 'Wonderland' };
+printPersonDetails(person);
+// Output: Alice is 28 years old and lives in Wonderland.
+
+
