@@ -1,49 +1,27 @@
 //ARROW FUNCTION
 
-()=>
-
-// ES6
-
-function add(x,y){
-	return x+y
-}
-console.log(add(2,3))
-
-// arrow function
-
-const add = (x,y) => x+y; // by default it has return statement if no {}, if {} used then have to write return 
-console.log(add(10,2));
-
-// this keyword in normal function and in arrow function
-function addToCart(){
-  this.productName = 'laptop'
-  this.getProduct = function(){
-    console.log(this.productName)// output will be 'laptop'
-    setTimeout(function(){
-      console.log(this.productName)// it will be undefined as it is inside function scope, in function scope this points to the window object,
-                                      convert setTimeout as arrow function then it will take this object from parent function
-    },1000)
+// Using Arrow Functions (Good Use Case)
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    setTimeout(() => {
+      // 'this' here refers to the Person object due to arrow function's lexical scoping
+      console.log(`Hello, my name is ${this.name}`);
+    }, 1000);
   }
 }
-let obj = new addToCart();
-obj.getProduct();
+const person = new Person('Alice');
+person.greet();  // Logs "Hello, my name is Alice" after 1 second
 
-// argument binding
-
-function abc(){
-console.log(argument)
-}
-abc(10,20)// output will be array of arguments
-abc(3,4,5,6) //output will be array of arguments
-
-const abc = () =>{
-  console.log(arguments)// arguments not defined error, to solve issue, rest parameter can be used
-}
-
-//object which contains function, class which contains function, then dont use arrow function
-const User = {
-  name:"hemal",
-  getUser:()=>{
-    console.log(this)//points to window object, to access name property convert getUser to normal function
+// Avoid Arrow Functions (Bad Use Case)
+const user = {
+  name: 'John',
+  getName: () => {
+    // 'this' does not refer to the 'user' object because arrow functions don't bind 'this'
+    console.log(this.name);  // Undefined
   }
-}
+};
+user.getName();  // Logs 'undefined'
+
