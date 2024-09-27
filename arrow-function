@@ -1,4 +1,8 @@
 //ARROW FUNCTION
+const greet = () => {
+  console.log('Hello, World!');
+};
+greet(); // Output: Hello, World!
 
 // Using Arrow Functions (Good Use Case)
 class Person {
