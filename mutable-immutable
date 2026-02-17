@@ -1,8 +1,8 @@
 //MUTABLE AND IMMUTABLE
 
 
-// mutable means value can be changed - non-primitive
-// immutable means value can not be changed - primitives
+primitive - immutable - value not changed on reassigment (string,number,...), copy by value
+non-primitive - mutable - value change on reassignement (object,array, function) copy by reference
 
 
 
